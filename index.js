@@ -4,7 +4,7 @@ const app = express()
 const axios = require('axios')
 const path = require('path');
 const marked = require('marked')
-const port = process.env.port || 5858
+const PORT = process.env.PORT || 5858
 const convert = require('./public/js/test')
 const URL = 'https://knuckle-cuts-db.herokuapp.com/api/blogs?populate=*'
 
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     .then(response => {
         res.render('pages/index', {
           "data": response.data.data,
-          "port": port,
+          "port": PORT,
           "convert": convert.formatDate,
           "url":"https://knuckle-cuts-db.herokuapp.com"
         })
@@ -35,7 +35,7 @@ app.get('/articles/:id', (req, res) => {
             "title": item.attributes.title,
             "content": marked.parse(unmarked),
             "photo": item.attributes.cover.data.attributes.formats.small.url,
-            "port": port,
+            "port": PORT,
             "url": 'https://knuckle-cuts-db.herokuapp.com',
             "time": convert.formatDate(item.attributes.publishedAt),
             "related": item.attributes.relatedPosts.intro,
@@ -51,4 +51,4 @@ app.get('/articles/:id', (req, res) => {
     })
 })
   
-app.listen(port, () => console.log(`http://localhost:${port}`))
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
