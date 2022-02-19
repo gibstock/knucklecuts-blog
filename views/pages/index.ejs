@@ -36,7 +36,7 @@
           <div class="card-container">
             <% data.map((article) => { %>
               <div class="card">
-                  <a href="http://localhost:<%= port %>/articles/<%= article.attributes.slug %>">
+                  <a href="/articles/<%= article.attributes.slug %>">
                   <img src="<%= article.attributes.cover.data.attributes.formats.small.url %>" alt=""> 
                   <h3><%= article.attributes.title %></h3>
                   <p class="short-description"><%= article.attributes.seo.metaDescription %></p>
