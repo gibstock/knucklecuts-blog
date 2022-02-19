@@ -113,3 +113,15 @@ h1 {
   flex: 33.3333%;
   padding: 0 1em;
 }
+
+footer {
+  background-color: black;
+  color: hsl(0, 0%, 90%);
+  padding: 3rem 0;
+}
+footer .container {
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+}
