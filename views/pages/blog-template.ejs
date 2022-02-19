@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/_blogHead.ejs") %> 
+    <meta name="description" content="<%= description %>" key="description" />
+  <meta name="keywords" content="<%= keywords %>" /> 
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+    key="twitter:card"
+  />
+  <meta property="og:url" content="<%= url %>" key="og:url" />
+  <meta property="og:title" content="<%= metaTitle %>" key="og:title" />
+  <meta 
+    property="og:description"
+    content="<%= description %>"
+    key="og:description"
+  />
+  <meta property="og:image" content="<%= url %><%=shareImage %>" key="og:image" />
+  <link rel="canonical" href="<%= url %>" />
+    <meta name="robots" content="noindex"></meta>
+    <meta name="googlebot" content="noindex"></meta>
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <%- include("../partials/_header.ejs") %>
+    </header>
+    <main>
+        <div class="container">
+            <a href="http://localhost:<%= port %>/">Back To Homepage</a>
+            <section id="article-area">
+                <div class="column-left">
+                    <h1><%= title %> </h1>
+                    <article id="article">
+                        <div class="by-line">
+                            By Andre | <%= time %> | <a href="#" title="Career">Career</a>
+                        </div>
+                        <img src="<%= photo %>" alt="">
+                        <div class="article-list">
+                            <%- content %> 
+                        </div>
+                    </article>
+                    <article id="related">
+                        <h3><%= related %></h3>
+                    </article>
+                </div>
+                <div class="column-right"></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

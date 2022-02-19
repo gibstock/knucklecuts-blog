@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/_head.ejs") %>
+  <% data.map((seo) => { %>
+    <meta name="description" content="<%= seo.attributes.seo.metaDescription %>" key="description" />
+    <meta name="keywords" content="<%= seo.attributes.keywords %>" /> 
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+      key="twitter:card"
+    />
+    <meta property="og:url" content="<%= url %>" key="og:url" />
+    <meta property="og:title" content="<%= seo.attributes.seo.metaTitle %>" key="og:title" />
+    <meta 
+      property="og:description"
+      content="<%= seo.attributes.seo.metaDescription %>"
+      key="og:description"
+    />
+    <meta property="og:image" content="<%= url %><%=seo.attributes.cover.data.attributes.formats.small.url %>" key="og:image" />
+    <link rel="canonical" href="<%= url %>" />
+    <meta name="robots" content="noindex"></meta>
+    <meta name="googlebot" content="noindex"></meta>
+
+  <%})%>
+  
+  <title>Homepage</title>
+</head>
+<body>
+  <header>
+    <%- include("../partials/_header.ejs") %>
+  </header>
+  <main>
+    <div class="container">
+      <section id="articles">
+          <div class="card-container">
+            <% data.map((article) => { %>
+              <div class="card">
+                  <a href="http://localhost:<%= port %>/articles/<%= article.attributes.slug %>">
+                  <img src="<%= article.attributes.cover.data.attributes.formats.small.url %>" alt=""> 
+                  <h3><%= article.attributes.title %></h3>
+                  <p class="short-description"><%= article.attributes.seo.metaDescription %></p>
+                  <div class="by-line">
+                    By Andre | <%= convert(article.attributes.publishedAt) %> | <a href="#" title="Career">Career</a>
+                </div>
+                </a>
+              </div>
+           <% }) %> 
+          </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+  
+</body>
+</html>
