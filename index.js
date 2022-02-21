@@ -33,6 +33,7 @@ app.get('/articles/:id', (req, res) => {
         if(req.params.id === item.attributes.slug) {
           res.render('pages/blog-template', {
             "title": item.attributes.title,
+            "author": item.attributes.author,
             "content": marked.parse(unmarked),
             "photo": item.attributes.cover.data.attributes.formats.thumbnail.url,
             "port": PORT,
