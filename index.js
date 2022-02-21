@@ -34,7 +34,7 @@ app.get('/articles/:id', (req, res) => {
           res.render('pages/blog-template', {
             "title": item.attributes.title,
             "content": marked.parse(unmarked),
-            "photo": item.attributes.cover.data.attributes.formats.small.url,
+            "photo": item.attributes.cover.data.attributes.formats.thumbnail.url,
             "port": PORT,
             "url": 'https://knuckle-cuts-db.herokuapp.com',
             "time": convert.formatDate(item.attributes.publishedAt),
@@ -42,7 +42,7 @@ app.get('/articles/:id', (req, res) => {
             // SEO
             "description": item.attributes.seo.metaDescription,
             "keywords": item.attributes.keywords,
-            "shareImage": item.attributes.cover.data.attributes.formats.small.url,
+            "shareImage": item.attributes.cover.data.attributes.formats.thumbnail.url,
             "metaTitle": item.attributes.seo.metaTitle,
             "preventIndexing": item.attributes.preventIndexing,
           })

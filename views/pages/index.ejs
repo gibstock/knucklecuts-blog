@@ -17,7 +17,7 @@
       content="<%= seo.attributes.seo.metaDescription %>"
       key="og:description"
     />
-    <meta property="og:image" content="<%= url %><%=seo.attributes.cover.data.attributes.formats.small.url %>" key="og:image" />
+    <meta property="og:image" content="<%= url %><%=seo.attributes.cover.data.attributes.formats.thumbnail.url %>" key="og:image" />
     <link rel="canonical" href="<%= url %>" />
     <meta name="robots" content="noindex"></meta>
     <meta name="googlebot" content="noindex"></meta>
@@ -37,7 +37,7 @@
             <% data.map((article) => { %>
               <div class="card">
                   <a href="/articles/<%= article.attributes.slug %>">
-                  <img src="<%= article.attributes.cover.data.attributes.formats.small.url %>" alt=""> 
+                  <img src="<%= article.attributes.cover.data.attributes.formats.thumbnail.url %>" alt=""> 
                   <h3><%= article.attributes.title %></h3>
                   <p class="short-description"><%= article.attributes.seo.metaDescription %></p>
                   <div class="by-line">
