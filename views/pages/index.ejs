@@ -37,11 +37,17 @@
             <% data.map((article) => { %>
               <div class="card">
                   <a href="/articles/<%= article.attributes.slug %>">
-                  <img src="<%= article.attributes.cover.data.attributes.formats.thumbnail.url %>" alt=""> 
+                  <% if(Object.keys(article.attributes.cover.data.attributes.formats).includes("medium")) { %>
+                    <img src="<%= article.attributes.cover.data.attributes.formats.medium.url %>" alt=""> 
+                    <%} else if(Object.keys(article.attributes.cover.data.attributes.formats).includes("small")) { %>
+                    <img src="<%= article.attributes.cover.data.attributes.formats.small.url %>" alt=""> 
+                    <%} else { %>
+                    <img src="<%= article.attributes.cover.data.attributes.formats.thumbnail.url %>" alt=""> 
+                  <%} %>
                   <h3><%= article.attributes.title %></h3>
                   <p class="short-description"><%= article.attributes.seo.metaDescription %></p>
                   <div class="by-line">
-                    By Andre | <%= convert(article.attributes.publishedAt) %> | <a href="#" title="Career">Career</a>
+                    <%= article.attributes.author %> | <%= convert(article.attributes.publishedAt) %> | <a href="#" title="<%= article.attributes.categories.data[0].attributes.name %>"><%= article.attributes.categories.data[0].attributes.name %></a>
                 </div>
                 </a>
               </div>

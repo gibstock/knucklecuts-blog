@@ -30,16 +30,25 @@ app.get('/articles/:id', (req, res) => {
     .then(response => {
       response.data.data.map((item) => {
         let unmarked = item.attributes.content
+        let photoFormat
+        if((Object.keys(item.attributes.cover.data.attributes.formats)).includes("medium")) {
+          photoFormat = item.attributes.cover.data.attributes.formats.medium.url;
+        } else if((Object.keys(item.attributes.cover.data.attributes.formats)).includes("small")) {
+          photoFormat = item.attributes.cover.data.attributes.formats.small.url;
+        } else {
+          photoFormat = item.attributes.cover.data.attributes.formats.thumbnail.url;
+        }
         if(req.params.id === item.attributes.slug) {
           res.render('pages/blog-template', {
             "title": item.attributes.title,
             "author": item.attributes.author,
             "content": marked.parse(unmarked),
-            "photo": item.attributes.cover.data.attributes.formats.thumbnail.url,
+            "photo": photoFormat,
             "port": PORT,
             "url": 'https://knuckle-cuts-db.herokuapp.com',
             "time": convert.formatDate(item.attributes.publishedAt),
             "related": item.attributes.relatedPosts.intro,
+            "category": item.attributes.categories.data[0].attributes.name,
             // SEO
             "description": item.attributes.seo.metaDescription,
             "keywords": item.attributes.keywords,
@@ -50,6 +59,7 @@ app.get('/articles/:id', (req, res) => {
         }
       })
     })
+    .catch(err => console.error(err))
 })
   
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
