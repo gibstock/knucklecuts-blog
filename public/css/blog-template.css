@@ -26,6 +26,7 @@ h1 {
 }
 .logo {
   font-size: 2.5rem;
+  text-align: center;
 }
 .nav-item {
   flex-grow: 1;
@@ -42,14 +43,22 @@ h1 {
   margin: 0 auto;
   max-width: 95%;
 }
+.nav-container {
+  padding: 2em 1em 0 1em;
+  margin: 0 auto;
+  max-width: 95%;
+}
 
 .card-container {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 0 1em;
+  gap: 1em; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(100%/(3 + 1) + 0.1%, ( 400px - 100vw)*1000, 100%), 1fr));
   gap: 1em;
 }
 .card {
@@ -94,11 +103,21 @@ h1 {
   flex-direction: row;
 
 }
+#article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
 #article p {
   font-size: 1.25rem;
 }
 #article img, #article p {
   margin-bottom: 2.5rem;
+}
+#article img {
+  max-width: 100%;
+  height: auto;
 }
 .by-line {
   margin-bottom: 2rem;
@@ -125,4 +144,13 @@ footer .container {
 }
 footer a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 400px) {
+  .nav-container {
+    display: none;
+  }
+  .column-right {
+    display: none;
+  }
 }
