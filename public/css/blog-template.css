@@ -94,7 +94,7 @@ h1 {
   margin: 0 1em;
   gap: 1em; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(100%/(3 + 1) + 0.1%, ( 400px - 100vw)*1000, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(100%/(3 + 1) + 0.1%, ( 600px - 100vw)*1000, 100%), 1fr));
   gap: 1em;
 }
 .card {
