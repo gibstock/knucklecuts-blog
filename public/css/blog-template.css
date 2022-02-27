@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Istok+Web&family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@300&family=Istok+Web&family=Monofett&display=swap');
 body {
   margin: 0;
   padding: 0;
@@ -73,8 +73,58 @@ h1 {
   color: black;
   font-weight: 600;
 }
+/* SUBSCRIBE HEADER  */
+#subscribe-form {
+  background-color: #f1f1f1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 2vw;
+  position: sticky;
+  top: 0;
+}
+#subscribe-form form {
+  align-self: center;
+  width: 100%;
+}
+#subsrcibe-form header h3, #subscribe-form header p {
+  font-family: 'Inter', sans-serif;
+}
+.field-group input {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  border: none;
+  width: 100%;
+  height: 7vh;
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+  padding: .5em 1em;
+}
+.form-field {
+  width: 100%;
+}
+.submit-container {
+
+  width: 100%;
+}
+.submit-container input {
+  box-sizing: border-box;
+  background-color: hsl(0, 100%, 0%);
+  width: 100%;
+  padding: 1em 1.5em;
+  border: none;
+  color: #fafafa;
+}
+.submit-container input:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 15%);
+}
 
 .container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.5em;
   padding: 2em 1em 0 1em;
   margin: 0 auto;
   max-width: 95%;
@@ -86,13 +136,6 @@ h1 {
 }
 
 .card-container {
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1em;
-  gap: 1em; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(100%/(3 + 1) + 0.1%, ( 600px - 100vw)*1000, 100%), 1fr));
   gap: 1em;
@@ -181,6 +224,11 @@ footer .container {
 footer a {
   text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }  
+}
 
 @media screen and (max-width: 600px) {
   .nav-container {
@@ -209,4 +257,16 @@ footer a {
     border: none;
     border-radius: 12px;
   }
+  #subscribe-form {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #subscribe-form form {
+    align-self: flex-start;
+  }
+  
 }

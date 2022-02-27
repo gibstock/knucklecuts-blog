@@ -29,9 +29,13 @@
 <body>
   <header>
     <%- include("../partials/_header.ejs") %>
+    
   </header>
   <main>
     <div class="container">
+      <aside>
+        <%- include('../partials/_subscribe.ejs') %>
+      </aside>
       <section id="articles">
           <div class="card-container">
             <% data.map((article) => { %>

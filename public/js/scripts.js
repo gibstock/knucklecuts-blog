@@ -11,5 +11,6 @@ function closeMobileNav() {
   mobileSidebar.style.width = '0'
 }
 
+
 openBtn.addEventListener('click', openMobileNav)
 closeBtn.addEventListener('click', closeMobileNav)
