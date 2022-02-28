@@ -55,6 +55,7 @@ app.get('/articles/:id', (req, res) => {
             "shareImage": item.attributes.cover.data.attributes.formats.thumbnail.url,
             "metaTitle": item.attributes.seo.metaTitle,
             "preventIndexing": item.attributes.preventIndexing,
+            "slug": item.attributes.slug
           })
         }
       })
