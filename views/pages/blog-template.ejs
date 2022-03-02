@@ -39,8 +39,9 @@
                     <h1><%= title %> </h1>
                     <article id="article">
                         <div class="by-line">
-                            <%= author %> | <%= time %> | <a href="#" title="<%= category %>"><%= category %></a>
+                            <%= author %> | <%= time %> | <a href="/<%= category %>s/" title="<%= category %>"><%= category %></a>
                         </div>
+                        <div class="underline"></div>
                         <img src="<%= photo %>" alt="">
                         <div class="article-list">
                             <%- content %> 

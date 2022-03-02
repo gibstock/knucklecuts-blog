@@ -1,0 +1,27 @@
+{
+  "name": "KnuckleCuts",
+  "short_name": "KnuckleCuts",
+  "start_url": "/index.ejs",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color" : "#111111",
+  "orientation" : "portrait-primary",
+  "icons" : [
+    {
+      "src": "/images/icon-192.png",
+      "type": "image/png",
+      "sizes" : "192x192"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "type": "image/png",
+      "sizes" : "512x512"
+    },
+    {
+      "src": "/images/maskable_icon.png",
+      "type": "image/png",
+      "sizes" : "192x192",
+      "purpose" : "maskable"
+    }
+  ]
+}

@@ -9,6 +9,13 @@ h1 {
   font-size: 2.5rem;
   font-weight: 800;
 }
+pre {
+  background-color: #111;
+  border-radius: 5px;
+}
+code {
+  color: #fff;
+}
 .nav-container {
   /* width: 100%; */
   padding: 2em 1em;
@@ -203,10 +210,17 @@ h1 {
   height: auto;
 }
 .by-line {
-  margin-bottom: 2rem;
-  color: hsl(0, 50%, 0%);
+  margin-bottom: 1rem;
+  color: hsl(0, 5%, 50%);
   line-height: 1.5;
   font-size: 1.25rem;
+}
+.underline {
+  width: 100%;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #818181;
+  margin-bottom: 1rem;
 }
 .column-left {
   width: 100%;

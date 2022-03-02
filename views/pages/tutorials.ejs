@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include("../partials/_head.ejs") %>
+  <%- include("../partials/_blogHead.ejs") %>
   <% data.map((seo) => { %>
     <meta name="description" content="<%= seo.attributes.seo.metaDescription %>" key="description" />
     <meta name="keywords" content="<%= seo.attributes.keywords %>" /> 
@@ -22,7 +22,7 @@
 
   <%})%>
   
-  <title>Homepage</title>
+  <title>Tutorials</title>
 </head>
 <body>
   <header>
@@ -38,7 +38,7 @@
           <div class="card-container">
             <% data.map((article) => { %>
               <div class="card">
-                  <a href="/articles/<%= article.attributes.slug %>">
+                  <a href="/tutorials/<%= article.attributes.slug %>">
                   <% if(Object.keys(article.attributes.cover.data.attributes.formats).includes("medium")) { %>
                     <img src="<%= article.attributes.cover.data.attributes.formats.medium.url %>" alt=""> 
                     <%} else if(Object.keys(article.attributes.cover.data.attributes.formats).includes("small")) { %>
@@ -49,7 +49,7 @@
                   <h3><%= article.attributes.title %></h3>
                   <p class="short-description"><%= article.attributes.seo.metaDescription %></p>
                   <div class="by-line">
-                    <%= article.attributes.author %> | <%= convert(article.attributes.publishedAt) %> | <a href="#" title="<%= article.attributes.categories.data[0].attributes.name %>"><%= article.attributes.categories.data[0].attributes.name %></a>
+                    
                 </div>
                 </a>
               </div>
